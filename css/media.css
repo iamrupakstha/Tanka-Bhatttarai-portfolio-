@@ -1,0 +1,320 @@
+ :root {
+            --primary-color: rgb(157, 157, 157);
+            --secondary-color: #950059;
+            --background-color: #ffff;
+            --accent-color: #6a0080;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            padding: 35px 0;
+            background: linear-gradient(135deg, var(--background-color) 0%, var(--light-gray) 100%);
+            overflow: hidden;
+        }
+
+        .math-bg-symbols {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .math-symbol {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            opacity: 0;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 400px;
+            height: 80%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+            box-shadow: 0 10px 30px rgba(149, 0, 89, 0.3);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(149, 0, 89, 0.5);
+            border-color: var(--accent-color);
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color), var(--primary-color));
+            z-index: -1;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .profile-image:hover::before {
+            opacity: 0.3;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+       
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--secondary-color);
+            transition: width 0.5s ease;
+        }
+
+        .hero-title:hover::after {
+            width: 100%;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .tagline::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .math-icon {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        .experience-stats {
+            margin: 30px 0;
+            animation: fadeInUp 1s ease-out 0.8s both;
+            width: 500px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(149, 0, 89, 0.05);
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
+            background: rgba(149, 0, 89, 0.1);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--primary-color);
+        }
+
+        .btn-contact {
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(149, 0, 89, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(149, 0, 89, 0.5);
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+        }
+
+        .btn-contact:active {
+            transform: translateY(1px);
+        }
+
+        .btn-contact::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .btn-contact:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .profile-image {
+                width: 220px;
+                height: 220px;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+        }
