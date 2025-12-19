@@ -1,0 +1,576 @@
+/* Hero Section Styles with Custom Colors */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+            background: linear-gradient(135deg, 
+                        rgba(255, 255, 255, 0.98) 0%, 
+                        rgba(245, 245, 245, 0.96) 50%, 
+                        rgba(255, 255, 255, 0.98) 100%);
+            color: var(--text-color, #333);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--light-gray, #f5f5f5);
+        }
+
+        /* Animated Math Symbols Background */
+        .math-bg-symbols {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+            font-family: "Cambria Math", "Latin Modern Math", "STIX Two Math", "Times New Roman", serif;
+        }
+
+        /* Create animated floating math symbols */
+        .math-bg-symbols::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            word-spacing: 3rem;
+            line-height: 3rem;
+            opacity: 0;
+            animation: floatSymbols 60s linear infinite;
+            color: var(--secondary-color, #950059);
+        }
+
+        /* We'll use JavaScript to add symbols, but here's a CSS fallback */
+        .math-bg-symbols::after {
+            content: "∑∫π∞√±≈≠≤≥αβγδθλμσφωΔ∇∂";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            word-spacing: 3rem;
+            line-height: 3rem;
+            opacity: 0;
+            animation: floatSymbolsReverse 70s linear infinite;
+            color: var(--accent-color, #6a0080);
+        }
+
+        @keyframes floatSymbols {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.08;
+            }
+            50% {
+                opacity: 0.12;
+            }
+            90% {
+                opacity: 0.08;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatSymbolsReverse {
+            0% {
+                transform: translateY(-50px) translateX(50px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.06;
+            }
+            50% {
+                opacity: 0.1;
+            }
+            90% {
+                opacity: 0.06;
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+        }
+
+        /* Add individual floating symbols background */
+        .math-bg-symbols {
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(149, 0, 89, 0.03) 0%, transparent 2%),
+                radial-gradient(circle at 90% 40%, rgba(106, 0, 128, 0.03) 0%, transparent 2%),
+                radial-gradient(circle at 50% 80%, rgba(149, 0, 89, 0.03) 0%, transparent 2%),
+                radial-gradient(circle at 30% 60%, rgba(106, 0, 128, 0.03) 0%, transparent 2%),
+                radial-gradient(circle at 70% 10%, rgba(149, 0, 89, 0.03) 0%, transparent 2%);
+            animation: pulseBackground 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseBackground {
+            0% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0.6;
+                transform: scale(1.05);
+            }
+        }
+
+        /* Container adjustments */
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Profile Image Styling with Animation */
+        .home-img {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .home-img .img-box {
+            width: 32vw;
+            height: 32vw;
+            border-radius: 50%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .home-img .img-box::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: conic-gradient(transparent, transparent, transparent, var(--secondary-color, #950059));
+            animation: rotate 4s linear infinite;
+        }
+        
+        .home-img .img-box::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: conic-gradient(transparent, transparent, transparent, var(--accent-color, #6a0080));
+            animation: rotate 4s linear infinite;
+            animation-delay: -2s;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .home-img .img-box .img-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: 50%;
+            border: 1px solid #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.1),
+                0 5px 15px rgba(149, 0, 89, 0.15);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: floatProfile 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatProfile {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                box-shadow: 
+                    0 15px 35px rgba(0, 0, 0, 0.1),
+                    0 5px 15px rgba(149, 0, 89, 0.15);
+            }
+            50% {
+                transform: translateY(-20px) rotate(1deg);
+                box-shadow: 
+                    0 25px 45px rgba(0, 0, 0, 0.15),
+                    0 15px 25px rgba(149, 0, 89, 0.2);
+            }
+        }
+        
+        .home-img .img-box:hover .img-item {
+            transform: scale(1.05) rotate(5deg);
+            animation-play-state: paused;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.2),
+                0 15px 30px rgba(149, 0, 89, 0.25);
+        }
+        
+        .home-img .img-box .img-item img {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.5s ease;
+        }
+        
+        .home-img .img-box:hover .img-item img {
+            transform: scale(1.1);
+        }
+
+        /* Hero Content Styling */
+        .hero-content {
+            padding-left: 40px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--text-color, #333), var(--secondary-color, #950059), var(--accent-color, #6a0080));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.3s;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary-color, #950059), var(--accent-color, #6a0080));
+            border-radius: 2px;
+            animation: expandWidth 1.2s forwards 1s;
+        }
+
+        @keyframes expandWidth {
+            to {
+                width: 100%;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: var(--primary-color, #9d9d9d);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards 0.6s;
+            letter-spacing: 0.5px;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--secondary-color, #950059);
+            position: relative;
+            padding-left: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards 0.9s;
+            font-weight: 500;
+        }
+
+        .tagline::before {
+            content: "❝";
+            position: absolute;
+            left: 0;
+            top: -5px;
+            color: var(--accent-color, #6a0080);
+            font-size: 1.8rem;
+        }
+
+        /* Contact Button */
+        .btn-contact {
+            background: linear-gradient(45deg, var(--secondary-color, #950059), var(--accent-color, #6a0080));
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(149, 0, 89, 0.2);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards 1.5s;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.6s;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(149, 0, 89, 0.3);
+            background: linear-gradient(45deg, var(--accent-color, #6a0080), var(--secondary-color, #950059));
+        }
+
+        .btn-contact:hover::before {
+            left: 100%;
+        }
+
+        .btn-contact:active {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(149, 0, 89, 0.3);
+        }
+
+        .btn-contact i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-contact:hover i {
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        /* Math Icon */
+        .math-icon {
+            color: var(--secondary-color, #950059);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Individual floating math symbols */
+        .floating-symbol {
+            position: absolute;
+            font-size: 1.8rem;
+            z-index: 1;
+            pointer-events: none;
+            font-family: "Cambria Math", "Latin Modern Math", "STIX Two Math", "Times New Roman", serif;
+            font-weight: bold;
+            opacity: 0.7;
+            animation: floatSymbol 20s infinite linear;
+        }
+
+        @keyframes floatSymbol {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0.3;
+            }
+            25% {
+                opacity: 0.6;
+            }
+            50% {
+                transform: translate(100px, -80px) rotate(180deg);
+                opacity: 0.8;
+            }
+            75% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+                opacity: 0.3;
+            }
+        }
+
+        /* Responsive Design - FIXED ORDER */
+        @media (max-width: 1199px) {
+            .home-img .img-box {
+                width: 35vw;
+                height: 35vw;
+            }
+        }
+        
+        /* For medium screens and above: image on right, content on left */
+        @media (min-width: 992px) {
+            .hero-content {
+                padding-left: 40px;
+                text-align: left;
+                margin-top: 0;
+            }
+            
+            .home-img .img-box {
+                width: 32vw;
+                height: 32vw;
+            }
+            
+            .hero-title::after {
+                left: 0;
+                transform: none;
+                width: 0;
+                animation: expandWidth 1.2s forwards 1s;
+            }
+        }
+        
+        /* For small screens: image BELOW content */
+        @media (max-width: 991px) {
+            .hero-content {
+                padding-left: 0;
+                text-align: center;
+                margin-top: 0;
+                margin-bottom: 40px; /* Add space between content and image */
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .home-img .img-box {
+                width: 45vw;
+                height: 45vw;
+                margin-top: 20px; /* Add space above the image */
+            }
+            
+            
+            
+            .hero-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                animation: expandWidthCenter 1.2s forwards 1s;
+            }
+            
+            @keyframes expandWidthCenter {
+                to {
+                    width: 80%;
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+                min-height: auto;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+                padding-left: 20px;
+            }
+            
+            .home-img .img-box {
+                width: 55vw;
+                height: 55vw;
+            }
+            
+            
+            .btn-contact {
+                padding: 14px 35px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .home-img .img-box {
+                width: 70vw;
+                height: 70vw;
+            }
+            
+           
+            
+            .home-img .img-box::before,
+            .home-img .img-box::after {
+                width: 350px;
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .home-img .img-box {
+                width: 80vw;
+                height: 80vw;
+            }
+            
+           
+            .btn-contact {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .home-img .img-box::before,
+            .home-img .img-box::after {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        /* Fallback using data URIs for critical symbols */
+        .math-fallback {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .sigma {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20,20 L80,20 L80,40 L40,40 L40,80 L80,80 L80,100 L20,100 L20,80 L60,80 L60,40 L20,40 Z' fill='%23950059'/%3E%3C/svg%3E");
+        }
