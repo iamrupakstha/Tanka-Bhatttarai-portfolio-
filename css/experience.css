@@ -14,50 +14,6 @@
     border-bottom: 1px solid var(--light-gray, #f5f5f5);
 }
 
-
-
-/* Section Header */
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-    position: relative;
-}
-
-.section-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #950059;
-    margin-bottom: 15px;
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 4px;
-    background: linear-gradient(to right, #950059, #6a0080);
-    border-radius: 2px;
-}
-
-.section-subtitle {
-    color: #6c757d;
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 20px auto 0;
-}
-
-.section-line {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(149, 0, 89, 0.3), transparent);
-    width: 80%;
-    margin: 40px auto 0;
-}
-
 /* Experience Stats */
 .experience-stats {
     display: flex;
@@ -185,11 +141,11 @@
 
 /* Current Teaching */
 .timeline-current, .timeline-former {
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 
 .timeline-header {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .timeline-title {
@@ -197,7 +153,7 @@
     font-size: 2.2rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom:5px;
 }
 
 .timeline-subtitle {

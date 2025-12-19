@@ -30,41 +30,51 @@
         .about-container{
             margin-top: -30px;
         }
-        /* Header */
-        .about-container header {
-            text-align: center;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .about-container h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .about-container h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            border-radius: 2px;
-        }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            color: #6c757d;
-            font-weight: 500;
-            margin-top: 20px;
-        }
+        /* Section Header */
+.section-header {
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    color: #6c757d;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 20px auto 0;
+}
+
+.section-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(149, 0, 89, 0.3), transparent);
+    width: 80%;
+    margin: 40px auto 0;
+}
         
         
         /* Content Layout */

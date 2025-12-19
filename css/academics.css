@@ -32,33 +32,6 @@
     background-color: #f8f9fa;
 }
 
-.section-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            border-radius: 2px;
-}
-
-.section-subtitle {
-    font-size: 1.3rem;
-    color: #6c757d;
-    font-weight: 500;
-    margin-top: 20px;
-}
 
 /* Academic Cards */
 .academic-card {
