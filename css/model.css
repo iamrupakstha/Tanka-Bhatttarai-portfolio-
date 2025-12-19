@@ -12,7 +12,7 @@
             padding: 20px 25px;
         }
 
-        .modal-title {
+        .modal-titles {
             font-weight: 600;
             font-size: 1.5rem;
         }
@@ -24,12 +24,12 @@
             padding: 0;
         }
 
-        .section-header {
+        .section-headers {
             text-align: center;
             padding: 25px 20px 10px;
             background-color: #f8f9fa;
         }
-         .section-title {
+         .section-titles {
             color: #950059;
             font-weight: 700;
             margin-bottom: 10px;
@@ -42,7 +42,7 @@
             margin: 0 auto 15px;
             border-radius: 2px;
         }
-         .section-subtitle {
+         .section-subtitles {
             color: #666;
             font-size: 1rem;
         }
