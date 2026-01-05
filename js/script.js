@@ -97,12 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // WhatsApp button functionality
-    const whatsappButtons = document.querySelectorAll('.whatsapp, .whatsapp-btn, .whatsapp-btn-mobile');
+    const whatsappButtons = document.querySelectorAll('.whatsapp, .whatsapp-btns, .whatsapp-btn-mobile');
     whatsappButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            const phoneNumber = '9863155015';
-            const message = encodeURIComponent('Hello Tanaka! I would like to inquire about your mathematics tutoring services.');
+            const phoneNumber = '9779767184377';
+            const message = encodeURIComponent('Hello Mr. Tanka Bhattarai sir! I would like to inquire about your mathematics tutoring services.');
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
             window.open(whatsappURL, '_blank');
         });
