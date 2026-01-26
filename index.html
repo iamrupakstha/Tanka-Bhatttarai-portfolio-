@@ -42,7 +42,19 @@
       href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap"
       rel="stylesheet"
     />
+    <!-- Contact form submission -->
+     <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "VxGY9PfxtlKlUSKf-",
+      });
+   })();
 
+
+</script>
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/model.css" />
@@ -153,10 +165,10 @@
           <div class="modal-body">
             <div class="container">
               <div class="section-headers">
-                <h2 class="section-titles">Get In Touch</h2>
+                <h2 class="section-titles">Stay In Touch</h2>
                 <div class="section-line"></div>
                 <p class="section-subtitles">
-                  Let's discuss mathematics education
+                  Let's delve into mathematics
                 </p>
               </div>
               <div class="contact-content">
@@ -186,10 +198,9 @@
                     </div>
                     <div class="contact-details">
                       <span>Location</span>
-                      <p>Birtamode, jhapa</p>
+                      <p>Birtamode-5, Jhapa</p>
                     </div>
                   </div>
-
                   <div class="social-links-model">
                     <a href="https://www.facebook.com/tika.bhattaarai"
                       ><i class="fab fa-facebook-f"></i
@@ -204,23 +215,24 @@
                 </div>
                 <div class="contact-form slide-in">
                   <h3>Send a Message</h3>
+
                   <form id="contactForm">
                     <div class="form-group">
-                      <input type="text" placeholder="Your Name" required />
+                      <input type="text" placeholder="Your Name" required name="name" />
                       <i class="fas fa-user"></i>
                     </div>
                     <div class="form-group">
-                      <input type="email" placeholder="Your Email" required />
+                      <input type="email" placeholder="Your Email" name="email" required />
                       <i class="fas fa-envelope"></i>
                     </div>
                     <div class="form-group">
-                      <input type="text" placeholder="Subject" required />
+                      <input type="text" placeholder="Subject" name="subject" required />
                       <i class="fas fa-tag"></i>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" >
                       <textarea
                         placeholder="Your Message"
-                        rows="5"
+                        rows="5" name="message"
                         required
                       ></textarea>
                       <i class="fas fa-comment"></i>
@@ -264,7 +276,7 @@
               >
             </h2>
 
-            <p class="tagline">Making Mathematics Accessible and Meaningful</p>
+            <p class="tagline">Making Mathematics Accessible, Simple and Meaningful</p>
 
             <!-- Stats Overview -->
             <div class="experience-stats">
@@ -280,6 +292,14 @@
                 <div class="stat-number">20,000+</div>
                 <div class="stat-label">Students Taught</div>
               </div>
+              <div class="stat-item">
+                <div class="stat-number">20,000+</div>
+                <div class="stat-label">Students Taught</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Success Rate</div>
+              </div>
             </div>
 
             <button
@@ -288,7 +308,7 @@
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
-              <i class="fas fa-envelope me-2"></i> Get in touch
+              <i class="fas fa-envelope me-2"></i> Stay in touch
             </button>
           </div>
 
@@ -313,7 +333,7 @@
         <div class="section-header">
           <h1 class="section-title">About</h1>
           <p class="section-subtitle">
-            Founder/Principal & Mathematics Educator
+            Founder/Principal of Liberty SS/College & Mathematics Academic
           </p>
           <div class="section-line"></div>
         </div>
@@ -321,24 +341,24 @@
         <div class="content">
           <div class="profile-section">
             <h2 class="profile-name">Mr. Tanka Bhattarai</h2>
-            <p class="profile-role">Founder/Principal & Mathematics Educator</p>
+            <p class="profile-role">Founder/Principal of Liberty SS/College </p>
             <p>
               Dedicated to transforming mathematical education and fostering
-              academic excellence through innovative teaching methodologies and
+              academic excellence through innovative teaching-learning, pedagogy and
               strong leadership.
             </p>
 
             <div class="profile-stats">
               <div class="stat">
                 <div class="stat-value">12+</div>
-                <div class="stat-label">Years Experience</div>
+                <div class="stat-label">Years of Experience</div>
               </div>
               <div class="stat">
                 <div class="stat-value">20000+</div>
                 <div class="stat-label">Students Taught</div>
               </div>
               <div class="stat">
-                <div class="stat-value">92%</div>
+                <div class="stat-value">95%</div>
                 <div class="stat-label">Success Rate</div>
               </div>
             </div>
@@ -356,15 +376,15 @@
                 <p>
                   Mr. Bhattarai holds a
                   <span class="highlight">Master's degree in Mathematics</span>
-                  from Tribhuvan University and a
+                  under Tribhuvan University and a
                   <span class="highlight">Bachelor's in Mathematics</span> with
-                  honors. His academic journey reflects his deep passion for
+                  honors. His academic journey reflects his intense passion for
                   mathematical theory and its practical applications in
                   education.
                 </p>
 
                 <ul class="education-list">
-                  <li>M. Sc/M.A - Tribhuvan University (2018)</li>
+                  <li>MSc/MA - Tribhuvan University (2018)</li>
                 </ul>
               </div>
             </div>
@@ -380,13 +400,13 @@
             </div>
             <div class="card-content">
               <p>
-                With over
+                More than
                 <span class="highlight"
-                  >12 years of dedicated teaching experience</span
-                >, Mr. Bhattarai believes that mathematics is a universal
-                language that develops critical thinking and problem-solving
+                  >12 years of dedicated teaching experience,</span
+                > Mr. Bhattarai believes that mathematics is a universal
+                language that develops a critical thinking and problem-solving
                 skills. His students consistently excel in SEE examinations and
-                national mathematics competitions.
+                national mathematic competitions.
               </p>
 
               <div class="philosophy-points">
@@ -403,7 +423,7 @@
                 <div class="point">
                   <i class="fas fa-handshake"></i>
                   <h3>Student-Centered</h3>
-                  <p>Individualized learning approach</p>
+                  <p>Individualized teaching-learning approach</p>
                 </div>
               </div>
             </div>
@@ -419,18 +439,18 @@
             <div class="card-content">
               <ul class="education-list">
                 <li>
-                  Building a culture of continuous improvement and innovation in
-                  teaching
+                  Building a culture of constant improvement and innovation in
+                  teaching-learning
                 </li>
                 <li>
-                  Fostering strong collaboration between teachers, students, and
+                  Fostering a strong collaboration among teachers, students, and
                   parents
                 </li>
                 <li>
-                  Implementing modern educational technologies and methodologies
+                  Implementing modern educational technologies and pedagogy
                 </li>
                 <li>
-                  Promoting extracurricular activities alongside academic rigor
+                  Promoting extracurricular activities coupled with academic rigor
                 </li>
               </ul>
             </div>
@@ -456,7 +476,7 @@
           <div class="timeline-header">
             <h3 class="timeline-title">Currently Teaching At</h3>
             <div class="timeline-subtitle">
-              Active engagement in multiple prestigious institutions
+              Active engagement in reputed institutions
             </div>
           </div>
 
@@ -533,7 +553,7 @@
           <div class="timeline-header">
             <h3 class="timeline-title">Formerly Taught At</h3>
             <div class="timeline-subtitle">
-              Active engagement in multiple prestigious institutions
+              Active engagement in reputed institutions
             </div>
           </div>
 
@@ -707,7 +727,7 @@
             <div class="expertise-item">
               <i class="fas fa-calculator"></i>
               <h4>B.E. Mathematics</h4>
-              <p>Advanced calculus, numerical methods, linear algebra</p>
+              <p>Advanced calculus, numerical methods, linear algebra, probability, statistics, real analysis and analytic</p>
             </div>
             <div class="expertise-item">
               <i class="fas fa-chart-line"></i>
@@ -717,12 +737,12 @@
             <div class="expertise-item">
               <i class="fas fa-school"></i>
               <h4>School Level Mathematics</h4>
-              <p>Basic mathematics, problem solving, logical reasoning</p>
+              <p>Basic mathematics, problem-solving, logical reasoning</p>
             </div>
             <div class="expertise-item">
               <i class="fas fa-cogs"></i>
               <h4>Technical Mathematics</h4>
-              <p>Applied mathematics, engineering math, statistics</p>
+              <p>Applied mathematics, engineering maths, statistics</p>
             </div>
           </div>
         </div>
@@ -733,7 +753,7 @@
     <section id="academics" class="section-padding bg-light">
       <div class="container">
         <div class="section-header">
-          <h1 class="section-title">Academic Offerings & Services</h1>
+          <h1 class="section-title">Academic Services</h1>
           <p class="section-subtitle">
             Comprehensive educational programs and resources for students at all
             levels
@@ -754,8 +774,8 @@
               <div class="academic-content">
                 <h3>Liberty SS College</h3>
                 <p class="academic-description">
-                  Quality higher education with comprehensive mathematics
-                  programs and modern facilities designed for academic
+                  Quality higher education with comprehensive mathematics and 
+                  programs, and cutting-edge facilities designed for academic
                   excellence.
                 </p>
 
@@ -799,7 +819,7 @@
                   </h4>
                   <ul>
                     <li>
-                      <i class="fas fa-check-circle"></i> Grade 6-12 all subject
+                      <i class="fas fa-check-circle"></i> Grade 6-12 all subjects
                       Tuition
                     </li>
                     <li>
@@ -808,6 +828,12 @@
                     </li>
                     <li>
                       <i class="fas fa-check-circle"></i> SEE & NEB Exam Prep
+                    </li>
+                     <li>
+                      <i class="fas fa-check-circle"></i> BBA, BCA, BSc, BAC and BBS  Tuitions
+                    </li>
+                     <li>
+                      <i class="fas fa-check-circle"></i> MBS, MBA Tuitions
                     </li>
                   </ul>
                 </div>
@@ -843,7 +869,7 @@
                       Examples
                     </li>
                     <li>
-                      <i class="fas fa-check-circle"></i> Problem Solving Guides
+                      <i class="fas fa-check-circle"></i> Problem-Solving Guides
                     </li>
                   </ul>
                 </div>
@@ -861,8 +887,7 @@
         <div class="section-header">
           <h2 class="section-title">Student Testimonials</h2>
           <p class="section-subtitle">
-            Hear from students who have experienced Mr. Bhattarai's teaching
-            methodology
+            Get feedback from students who have experienced Mr. Bhattarai's mode of teaching
           </p>
           <div class="section-line"></div>
         </div>
@@ -893,7 +918,7 @@
                   <div class="student-avatar">
                     <img
                       src="images/angel_mainali.jpg"
-                      alt="Safal Dhungana"
+                      alt="Angel Mainali"
                     />
                   </div>
                   <div claSafal Dhunganass="student-details">
@@ -928,7 +953,7 @@
                 <div class="student-info">
                   <div class="student-avatar">
                     <img
-                      src="images/angel_mainali.jpg"
+                      src="images/prabin.jpeg"
                       alt="Prabin Poudel"
                     />
                   </div>
@@ -962,7 +987,7 @@
                 <div class="student-info">
                   <div class="student-avatar">
                     <img
-                      src="images/angel_mainali.jpg"
+                      src="images/safal.jpeg"
                       alt="Safal Dhungana"
                     />
                   </div>
@@ -1037,15 +1062,15 @@
                 <div class="student-info">
                   <div class="student-avatar">
                     <img
-                      src="images/tanka.png"
-                      alt="Safal Dhungana"
+                      src="images/laxmi-poudel.jpeg'"
+                      alt="Laxmi Poudel"
                     />
                   </div>
                   <div claSafal Dhunganass="student-details">
-                     <h4>Angel Mainali</h4>
-                    <p class="student-course">B.E. Computer Engineering</p>
+                     <h4>Laxmi Poudel</h4>
+                    <p class="student-course">+2 Scicence</p>
                     <p class="student-institution">
-                      Pathivara Engineering College
+                      Mohanmaya Secondary School
                     </p>
                     <div class="rating">
                       <i class="fas fa-star"></i>

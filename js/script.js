@@ -1,3 +1,4 @@
+
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Elements
@@ -101,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     whatsappButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            const phoneNumber = '9779767184377';
+            const phoneNumber = '9779805073555';
             const message = encodeURIComponent('Hello Mr. Tanka Bhattarai sir! I would like to inquire about your mathematics tutoring services.');
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
             window.open(whatsappURL, '_blank');
@@ -145,56 +146,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Contact Form Submission
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function(){
     const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+
+if(contactForm){
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const submitBtn=this.querySelector('.btn-primary-modal');
+        const originalText= submitBtn.innerHTML;
+
+        submitBtn.innerHTML= '<i class="fas fa-spinner fa-spin"></i>Sending...';
+        submitBtn.disabled = true;
+
+
+        emailjs.send("service_84ik37j", "template_ypvbein", {
+            name: this.querySelector('input[type="text"]').value,
+            email: this.querySelector('input[type="email"]').value,
+            subject: this.querySelector('input[placeholder="Subject"]').value,
+            message: this.querySelector('textarea').value,
+            to_email: "info.liberysscollege@gmail.com"
+
+        })
+        .then(()=> {
+            let successMsg = document.querySelector('.success-message');
+            if(!successMsg){
+                successMsg=document.createElement('div');
+                successMsg.className='success-message';
+                successMsg.innerHTML = 
+                '<i class="fas fa-check-circle"></i> Message sent successfully!';
+                contactForm.appendChild(successMsg);
+
+            }
+
+            successMsg.style.display= 'block';
+            contactForm.reset();
             
-            // Get form data
-            const formData = {
-                name: this.querySelector('input[type="text"]').value,
-                email: this.querySelector('input[type="email"]').value,
-                subject: this.querySelector('input[placeholder="Subject"]').value,
-                message: this.querySelector('textarea').value
-            };
-            
-            // Here you would normally send the data to a server
-            // For now, just show a success message
-            const submitBtn = this.querySelector('.btn-primary-modal');
-            const originalText = submitBtn.innerHTML;
-            
-            // Show loading state
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate API call
-            setTimeout(() => {
-                // Create success message
-                let successMsg = document.querySelector('.success-message');
-                if (!successMsg) {
-                    successMsg = document.createElement('div');
-                    successMsg.className = 'success-message';
-                    successMsg.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! I\'ll get back to you soon.';
-                    contactForm.appendChild(successMsg);
-                }
-                
-                successMsg.style.display = 'block';
-                
-                // Reset form
-                this.reset();
-                
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                }, 5000);
-                
-            }, 1500);
+
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+
+            setTimeout(()=> successMsg.style.display="none", 5000);
+
+        })
+        .catch(()=> {
+            alert("Failed to send message. Please try again.");
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
         });
-    }
+    });
+
+}
 });
